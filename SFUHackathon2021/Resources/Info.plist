@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MBXAccessToken</key>
+	<string>sk.eyJ1IjoiemxveXNlcmd1bnlhIiwiYSI6ImNrdHY4NzJ1cTA3ajgyc3BqaTc2ZTdsYjgifQ.YoK0hZicLhW8INBnr8RH0g</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MontserratRegular.ttf</string>
+		<string>MontserratMedium.ttf</string>
+		<string>MontserratBold.ttf</string>
+		<string>MontserratSemiBold.ttf</string>
+		<string>MontserratLight.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+</dict>
+</plist>
