@@ -2,24 +2,22 @@ import UIKit
 import SnapKit
 import MapKit
 
-class MapView: UIView {
+class MapView: RootView {
     
     private let topTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Укажите маршрут"
-        label.font = R.font.montserratRegular(size: 24.0)
+        label.font = R.font.montserratMedium(size: 20.0)
         label.textColor = .black
         
         return label
     }()
 
-     lazy var topRoundView: UIView = {
+     let topRoundView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 32.0
         view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
-        view.addSubview(topTitleLabel)
         
         return view
     }()
@@ -28,6 +26,14 @@ class MapView: UIView {
         let mapView = MKMapView()
         
         return mapView
+    }()
+    
+    let setCurrentLocationButton: UIButton = {
+        let button = UIButton()
+        button.setImage(.init(systemName: "location.fill"), for: .normal)
+        button.tintColor = UIColor(hex: 0xC4C4C4)
+        
+        return button
     }()
     
     let fromField: StyledTextField = {
@@ -50,7 +56,7 @@ class MapView: UIView {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = R.font.montserratMedium(size: 14.0)
         button.backgroundColor = R.color.foregroundContrast()
-        button.layer.cornerRadius = 16.0
+        button.layer.cornerRadius = 24.0
         
         return button
     }()
@@ -60,49 +66,47 @@ class MapView: UIView {
         button.setImage(UIImage(systemName: "location.fill"), for: .normal)
         button.tintColor = UIColor(hex: 0xC4C4C4)
         button.backgroundColor = .white
-        button.layer.cornerRadius = 25.0
+        button.layer.cornerRadius = 24.0
         
         return button
     }()
     
-     lazy var bottomRoundView: UIView = {
+     let bottomRoundView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 32.0
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        view.addSubview(fromField)
-        view.addSubview(toField)
-        view.addSubview(routeButton)
-                
+ 
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func setup() {
         
         addSubview(mapKitView)
         addSubview(topRoundView)
         addSubview(bottomRoundView)
         addSubview(centerMapButton)
         
-        setupConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupConstraints() {
+        topRoundView.addSubview(topTitleLabel)
         
+        bottomRoundView.addSubview(fromField)
+        bottomRoundView.addSubview(toField)
+        bottomRoundView.addSubview(routeButton)
+        
+        fromField.addSubview(setCurrentLocationButton)
+        
+        super.setup()
+    }
+    
+    override func setupConstraints() {
         topRoundView.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
-            make.height.equalTo(108.0)
         }
         
         topTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20.0)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-16.0)
+            make.bottom.equalToSuperview().offset(-20.0)
         }
         
         mapKitView.snp.makeConstraints { make in
@@ -111,36 +115,36 @@ class MapView: UIView {
         
         bottomRoundView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(221.0)
         }
         
         fromField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(24.0)
-            make.left.equalToSuperview().offset(54.0)
-            make.right.equalToSuperview().offset(-54.0)
-            make.height.equalTo(40.0)
+            make.left.right.equalToSuperview().inset(24.0)
+        }
+        
+        setCurrentLocationButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-12.0)
+            make.centerY.equalToSuperview()
+            make.size.equalTo(24.0)
         }
         
         toField.snp.makeConstraints { make in
             make.top.equalTo(fromField.snp.bottom).offset(16.0)
-            make.left.equalToSuperview().offset(54.0)
-            make.right.equalToSuperview().offset(-54.0)
-            make.height.equalTo(40.0)
+            make.left.right.equalToSuperview().inset(24.0)
         }
         
         routeButton.snp.makeConstraints { make in
             make.top.equalTo(toField.snp.bottom).offset(24.0)
-            make.left.equalToSuperview().offset(68.0)
-            make.right.equalToSuperview().offset(-68.0)
-            make.height.equalTo(32.0)
+            make.left.right.equalToSuperview().inset(24.0)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-8.0)
+            make.height.equalTo(48.0)
         }
         
         centerMapButton.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-16.0)
             make.bottom.equalTo(bottomRoundView.snp.top).offset(-16.0)
-            make.size.equalTo(50.0)
+            make.size.equalTo(48.0)
         }
-        
     }
     
 }

@@ -6,8 +6,9 @@ class StyledTextField: UITextField {
     
     override var placeholder: String? {
         didSet {
-            attributedPlaceholder = NSAttributedString(string: placeholder ?? "", attributes: [.foregroundColor: R.color.darkGrey() ?? .darkGray,
-                                                                                               .font: font ?? .systemFont(ofSize: 12.0)])
+            attributedPlaceholder = NSAttributedString(string: placeholder ?? "",
+                                                       attributes: [.foregroundColor: R.color.darkGrey() ?? .darkGray,
+                                                                    .font: font ?? .systemFont(ofSize: 12.0)])
         }
     }
     
@@ -25,7 +26,7 @@ class StyledTextField: UITextField {
         super.init(frame: frame)
         
         font = R.font.montserratRegular(size: 12.0)
-        backgroundColor = .white
+        backgroundColor = R.color.lightGrey()
         textColor = R.color.darkGrey()
         layer.cornerRadius = 24.0
     }

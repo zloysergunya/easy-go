@@ -2,7 +2,7 @@ import UIKit
 import MapKit
 import OverlayContainer
 
-class MapViewController: UIViewController {
+class MapViewController: ViewController<MapView> {
     
     private let provider = MapProdiver()
     private let locationManager = CLLocationManager()
@@ -12,48 +12,28 @@ class MapViewController: UIViewController {
     
     private var pointFrom: Point?
     private var pointTo: Point?
-    
-    private var mainView: MapView {
-        return view as! MapView
-    }
-    
-    override func loadView() {
-        view = MapView()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainView.routeButton.addTarget(self, action: #selector(getRoute), for: .touchUpInside)
         mainView.centerMapButton.addTarget(self, action: #selector(centerViewOnUserLocation), for: .touchUpInside)
+        mainView.setCurrentLocationButton.addTarget(self, action: #selector(setUserLocationToField), for: .touchUpInside)
         
         mainView.fromField.delegate = self
-        let rightFromFieldButton = UIButton()
-        rightFromFieldButton.addTarget(self, action: #selector(setUserLocationToField), for: .touchUpInside)
-        rightFromFieldButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
-        rightFromFieldButton.tintColor = UIColor(hex: 0xC4C4C4)
-        rightFromFieldButton.imageEdgeInsets = UIEdgeInsets(top: 0.0, left: -20.0, bottom: 0.0, right: 0.0)
-        rightFromFieldButton.frame = CGRect(origin: CGPoint(x: mainView.fromField.frame.size.width - 25.0, y: 8.0),
-                                            size: CGSize(width: 25.0, height: 25.0))
-        mainView.fromField.rightView = rightFromFieldButton
-        mainView.fromField.rightViewMode = .always
-        
         mainView.toField.delegate = self
+        mainView.mapKitView.delegate = self
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
-        configureMapKitView()
-        checkLocationServices()
         loadPoints()
         loadElements()
     }
     
-    private func configureMapKitView() {
-        mainView.mapKitView.delegate = self
-        mainView.mapKitView.setUserTrackingMode(.follow, animated: true)
-    }
-    
-    private func configureLocationManager() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func loadPoints() {
@@ -65,39 +45,34 @@ class MapViewController: UIViewController {
             switch result {
             case .success(let features):
                 self.features = features
-                
                 features.forEach { self.createPoint(feature: $0) }
                 
-            case .failure:
-                break
+            case .failure: break
             }
         }
     }
     
     private func loadElements() {
         provider.loadElements { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            
             switch result {
-            case .success(let mapElements):
-                self.mapElements = mapElements
-                                
-            case .failure:
-                break
+            case .success(let mapElements): self?.mapElements = mapElements
+            case .failure: break
             }
         }
     }
     
     private func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
-            configureLocationManager()
+            mainView.mapKitView.setUserTrackingMode(.follow, animated: true)
             checkLocationAuthorization()
         } else {
-            if let settingsUrl = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl)
-            }
+            openSettings()
+        }
+    }
+    
+    private func openSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
         }
     }
     
@@ -109,9 +84,7 @@ class MapViewController: UIViewController {
             locationManager.startUpdatingLocation()
             
         case .denied:
-            if let settingsUrl = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl)
-            }
+            openSettings()
             
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -254,6 +227,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
 // MARK: - UIViewControllerTransitioningDelegate
 extension MapViewController: UIViewControllerTransitioningDelegate {
+    
     func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
@@ -262,26 +236,23 @@ extension MapViewController: UIViewControllerTransitioningDelegate {
             presenting: presenting
         )
     }
+    
 }
 
 // MARK: - UITextFieldDelegate
 extension MapViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        switch textField {
-        case mainView.fromField:
-            let vc = AddressSearchViewController(searchPointType: .from, region: mainView.mapKitView.region)
-            vc.delegate = self
-            present(vc, animated: true)
-            
-        case mainView.toField:
-            let vc = AddressSearchViewController(searchPointType: .to, region: mainView.mapKitView.region)
-            vc.delegate = self
-            present(vc, animated: true)
-            
-        default:
-            break
+        let viewController: AddressSearchViewController
+        
+        if textField == mainView.fromField {
+            viewController = AddressSearchViewController(searchPointType: .from, region: mainView.mapKitView.region)
+        } else {
+            viewController = AddressSearchViewController(searchPointType: .to, region: mainView.mapKitView.region)
         }
+        
+        viewController.delegate = self
+        present(viewController, animated: true)
     }
     
 }

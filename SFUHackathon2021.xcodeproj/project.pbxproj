@@ -13,7 +13,6 @@
 		C40C6526282111C30069B800 /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C6525282111C30069B800 /* LoggerService.swift */; };
 		C40C6528282111DD0069B800 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C6527282111DD0069B800 /* AuthService.swift */; };
 		C40C652B282112D30069B800 /* UIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C652A282112D30069B800 /* UIService.swift */; };
-		C40C652E282112FB0069B800 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C652D282112FB0069B800 /* TabBarController.swift */; };
 		C40C65312821135E0069B800 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C65302821135E0069B800 /* SwipeNavigationController.swift */; };
 		C40C6535282113870069B800 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C6534282113870069B800 /* ViewController.swift */; };
 		C40C6538282113AB0069B800 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C6537282113AB0069B800 /* RootView.swift */; };
@@ -92,7 +91,6 @@
 		C40C6525282111C30069B800 /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
 		C40C6527282111DD0069B800 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C40C652A282112D30069B800 /* UIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIService.swift; sourceTree = "<group>"; };
-		C40C652D282112FB0069B800 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C40C65302821135E0069B800 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
 		C40C6534282113870069B800 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C40C6537282113AB0069B800 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -203,14 +201,6 @@
 				C40C6523282111870069B800 /* Autowired.swift */,
 			);
 			path = ServiceLocator;
-			sourceTree = "<group>";
-		};
-		C40C652C282112F10069B800 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				C40C652D282112FB0069B800 /* TabBarController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		C40C652F282113550069B800 /* Controllers */ = {
@@ -527,7 +517,6 @@
 		C46A8EBC26FAF40F00BCEECA /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C40C652C282112F10069B800 /* TabBar */,
 				C470266D26FB6CD700BF5225 /* AddressSearch */,
 				C416FE6326FB44300087C429 /* MapPointInfo */,
 				C416FE4A26FB1DEF0087C429 /* Map */,
@@ -747,7 +736,6 @@
 				C416FE6A26FB4B4E0087C429 /* Element.swift in Sources */,
 				C40C656A28211A040069B800 /* UIColor+Hex.swift in Sources */,
 				C416FE5726FB32A90087C429 /* MapProdiver.swift in Sources */,
-				C40C652E282112FB0069B800 /* TabBarController.swift in Sources */,
 				C40C652B282112D30069B800 /* UIService.swift in Sources */,
 				C416FE3726FB080E0087C429 /* Utils.swift in Sources */,
 				C40C656628211A040069B800 /* Date+DatesBeetwenTwoDates.swift in Sources */,
@@ -852,7 +840,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -907,7 +895,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
