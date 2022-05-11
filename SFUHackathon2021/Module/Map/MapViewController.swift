@@ -83,30 +83,38 @@ class MapViewController: ViewController<MapView> {
             centerViewOnUserLocation()
             locationManager.startUpdatingLocation()
             
-        case .denied:
-            openSettings()
-            
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            
-        case .restricted:
-            break
+        case .denied: openSettings()
+        case .notDetermined: locationManager.requestWhenInUseAuthorization()
+        case .restricted: break
             
         case .authorizedAlways:
             mainView.mapKitView.showsUserLocation = true
             centerViewOnUserLocation()
             locationManager.startUpdatingLocation()
             
-        @unknown default:
-            fatalError()
+        @unknown default: fatalError()
         }
     }
     
-    @objc private func centerViewOnUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+    private func updateRouteButtonState() {
+        if pointFrom != nil && pointTo != nil {
+            mainView.routeButton.backgroundColor = R.color.blue()
+            mainView.routeButton.isUserInteractionEnabled = true
+        }
+    }
+    
+    private func createRoure(points: [Points]) {
+        mainView.mapKitView.removeOverlays(mainView.mapKitView.overlays)
+        let coordinates = points.map({ $0.points.coordinates.compactMap({ CLLocationCoordinate2D(latitude: $0[1], longitude: $0[0]) }) })
+        coordinates.forEach {
+            let polyline = MKPolyline(coordinates: $0, count: $0.count)
+            mainView.mapKitView.addOverlay(polyline)
+        }
+        
+        if let startPoint = coordinates.first?.first {
+            let center = CLLocationCoordinate2D(latitude: startPoint.latitude, longitude: startPoint.longitude)
+            let region = MKCoordinateRegion(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             mainView.mapKitView.setRegion(region, animated: true)
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
         }
     }
     
@@ -115,6 +123,14 @@ class MapViewController: ViewController<MapView> {
         mapPoint.coordinate = CLLocationCoordinate2D(latitude: feature.geometry.coordinates[1], longitude: feature.geometry.coordinates[0])
         mapPoint.feature = feature
         mainView.mapKitView.addAnnotation(mapPoint)
+    }
+    
+    @objc private func centerViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mainView.mapKitView.setRegion(region, animated: true)
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        }
     }
     
     @objc private func getRoute(_ sender: UIButton) {
@@ -143,21 +159,6 @@ class MapViewController: ViewController<MapView> {
         }
     }
     
-    private func createRoure(points: [Points]) {
-        mainView.mapKitView.removeOverlays(mainView.mapKitView.overlays)
-        let coordinates = points.map({ $0.points.coordinates.compactMap({ CLLocationCoordinate2D(latitude: $0[1], longitude: $0[0]) }) })
-        coordinates.forEach {
-            let polyline = MKPolyline(coordinates: $0, count: $0.count)
-            mainView.mapKitView.addOverlay(polyline)
-        }
-        
-        if let startPoint = coordinates.first?.first {
-            let center = CLLocationCoordinate2D(latitude: startPoint.latitude, longitude: startPoint.longitude)
-            let region = MKCoordinateRegion(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            mainView.mapKitView.setRegion(region, animated: true)
-        }
-    }
-    
     @objc private func setUserLocationToField(_ sender: UIButton) {
         guard let location = locationManager.location?.coordinate else {
             return
@@ -165,6 +166,7 @@ class MapViewController: ViewController<MapView> {
         
         pointFrom = Point(lat: location.latitude, lng: location.longitude)
         mainView.fromField.text = "Моё местоположение"
+        updateRouteButtonState()
     }
     
 }
@@ -279,6 +281,8 @@ extension MapViewController: AddressSearchViewControllerDelegate {
             pointTo = hit.point
             mainView.toField.text = title
         }
+        
+        updateRouteButtonState()
     }
     
 }

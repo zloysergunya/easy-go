@@ -55,8 +55,9 @@ class MapView: RootView {
         button.setTitle("Построить маршрут", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = R.font.montserratMedium(size: 14.0)
-        button.backgroundColor = R.color.foregroundContrast()
+        button.backgroundColor = R.color.lightBlue()
         button.layer.cornerRadius = 24.0
+        button.isUserInteractionEnabled = false
         
         return button
     }()
