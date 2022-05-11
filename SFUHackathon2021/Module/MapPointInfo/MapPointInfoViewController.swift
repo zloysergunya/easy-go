@@ -2,14 +2,10 @@ import UIKit
 import OverlayContainer
 import Atributika
 
-class MapPointInfoViewController: UIViewController {
+class MapPointInfoViewController: ViewController<MapPointInfoView> {
     
-    private var mainView: MapPointInfoView {
-        return view as! MapPointInfoView
-    }
-    
-    let feature: Feature
-    let elements: [Element]
+    private let feature: Feature
+    private let elements: [Element]
     
     init(feature: Feature, elements: [Element]) {
         self.feature = feature
@@ -19,10 +15,6 @@ class MapPointInfoViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func loadView() {
-        view = MapPointInfoView()
     }
 
     override func viewDidLoad() {
@@ -39,8 +31,8 @@ class MapPointInfoViewController: UIViewController {
         var text = ""
         if feature.properties.characteristics.count > 0 {
             feature.properties.characteristics.forEach { char in
-                if let element = elements.filter({ $0.id == char }).first {
-                    text.append("• " + element.name + "\n")
+                if let element = elements.first(where: { $0.id == char }) {
+                    text.append(element.name + "\n")
                 }
             }
         } else {
@@ -76,8 +68,8 @@ extension MapPointInfoViewController: OverlayContainerViewControllerDelegate {
                                         heightForNotchAt index: Int,
                                         availableSpace: CGFloat) -> CGFloat {
         switch OverlayNotch.allCases[index] {
-            case .maximum: return availableSpace - mainView.safeAreaInsets.top
-            case .medium: return availableSpace - 360
+        case .maximum: return availableSpace - mainView.safeAreaInsets.top
+        case .medium: return availableSpace - 500.0
         }
     }
     

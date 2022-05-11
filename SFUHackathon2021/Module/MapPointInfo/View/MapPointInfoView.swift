@@ -1,20 +1,20 @@
 import UIKit
 import SnapKit
 
-class MapPointInfoView: UIView {
+class MapPointInfoView: RootView {
     
     let closeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.tintColor = UIColor(hex: 0x8690A6)
+        button.tintColor = R.color.darkGrey()
         
         return button
     }()
     
     private let nameTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.montserratSemiBold(size: 14.0)
-        label.textColor = UIColor(hex: 0x8690A6)
+        label.font = R.font.montserratSemiBold(size: 13.0)
+        label.textColor = R.color.blue()
         label.text = "Название точки"
         
         return label
@@ -31,8 +31,8 @@ class MapPointInfoView: UIView {
     
     private let elementsTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.montserratSemiBold(size: 14.0)
-        label.textColor = UIColor(hex: 0x8690A6)
+        label.font = R.font.montserratSemiBold(size: 13.0)
+        label.textColor = R.color.blue()
         label.text = "Элементы безбарьерной среды"
         
         return label
@@ -47,8 +47,8 @@ class MapPointInfoView: UIView {
         return label
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func setup() {
+        backgroundColor = .white
         
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         layer.cornerRadius = 32.0
@@ -59,17 +59,10 @@ class MapPointInfoView: UIView {
         addSubview(elementsTitleLabel)
         addSubview(elementsLabel)
         
-        backgroundColor = .white
-        
-        setupConstraints()
+        super.setup()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupConstraints() {
-        
+    override func setupConstraints() {
         closeButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(24.0)
             make.right.equalToSuperview().offset(-24.0)
@@ -98,7 +91,6 @@ class MapPointInfoView: UIView {
             make.left.equalToSuperview().offset(24.0)
             make.right.equalToSuperview().offset(-24.0)
         }
-        
     }
     
 }
