@@ -13,7 +13,7 @@ struct Hit: Codable {
     let housenumber: String?
 }
 
-struct Point: Codable {
+struct Point: Codable, Equatable {
     let lat: Double
     let lng: Double
 }

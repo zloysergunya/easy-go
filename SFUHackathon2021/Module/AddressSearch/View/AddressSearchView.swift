@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class AddressSearchView: UIView {
+class AddressSearchView: RootView {
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -43,9 +43,7 @@ class AddressSearchView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    override func setup() {
         backgroundColor = .white
         
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -56,15 +54,10 @@ class AddressSearchView: UIView {
         addSubview(searchBar)
         addSubview(collectionView)
         
-        setupConstraints()
+        super.setup()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupConstraints() {
-        
+    override func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.top.left.equalToSuperview().offset(24.0)
             make.right.equalToSuperview().offset(-24.0)
@@ -86,7 +79,6 @@ class AddressSearchView: UIView {
             make.top.equalTo(searchBar.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
-        
     }
     
 }

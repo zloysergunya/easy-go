@@ -4,6 +4,7 @@ PODS:
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - IQKeyboardManagerSwift (6.5.6)
+  - Kingfisher (7.2.2)
   - OverlayContainer (3.5.1)
   - PinLayout (1.10.0)
   - R.swift (5.4.0):
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Atributika (~> 4.9.0)
   - IGListKit (~> 4.0)
   - IQKeyboardManagerSwift
+  - Kingfisher
   - OverlayContainer
   - PinLayout (~> 1.8)
   - R.swift (~> 5.4.0)
@@ -28,6 +30,7 @@ SPEC REPOS:
     - IGListDiffKit
     - IGListKit
     - IQKeyboardManagerSwift
+    - Kingfisher
     - OverlayContainer
     - PinLayout
     - R.swift
@@ -40,6 +43,7 @@ SPEC CHECKSUMS:
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
   OverlayContainer: a95f0f555fd0dd1addba3fc45370801e5fc16e68
   PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
   R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: 46d5a6dc9e10189c2d9a309fcea8dcc6094b3bd6
+PODFILE CHECKSUM: e8207ead395b1c8d64470c8770422ef5dc142714
 
 COCOAPODS: 1.11.2

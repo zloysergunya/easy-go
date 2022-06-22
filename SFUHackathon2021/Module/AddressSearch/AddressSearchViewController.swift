@@ -6,7 +6,7 @@ protocol AddressSearchViewControllerDelegate: AnyObject {
     func addressSearchViewController(_ controller: AddressSearchViewController, didSearch hit: Hit)
 }
 
-class AddressSearchViewController: UIViewController {
+class AddressSearchViewController: ViewController<AddressSearchView> {
     
     enum SearchPointType {
         case from, to
@@ -21,10 +21,6 @@ class AddressSearchViewController: UIViewController {
     private lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     }()
-    
-    private var mainView: AddressSearchView {
-        return view as! AddressSearchView
-    }
     
     let searchPointType: SearchPointType
     let region: MKCoordinateRegion

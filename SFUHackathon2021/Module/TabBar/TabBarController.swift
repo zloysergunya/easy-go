@@ -11,13 +11,17 @@ class TabBarController: UITabBarController {
     }
     
     private func configure() {
+        let newsViewController = NewsViewController()
+        newsViewController.tabBarItem.image = R.image.tabBarNews()
+        
         let mapViewController = MapViewController()
         mapViewController.tabBarItem.image = R.image.tabBarMap()
         
         let settingsViewController = SettingsViewController()
         settingsViewController.tabBarItem.image = R.image.tabBarSettings()
         
-        viewControllers = [SwipeNavigationController(rootViewController: mapViewController),
+        viewControllers = [SwipeNavigationController(rootViewController: newsViewController),
+                           SwipeNavigationController(rootViewController: mapViewController),
                            SwipeNavigationController(rootViewController: settingsViewController)]
         
         viewControllers?.compactMap({ $0 as? UINavigationController }).compactMap({ $0.viewControllers.first }).forEach({
