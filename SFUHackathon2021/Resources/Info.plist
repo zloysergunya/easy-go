@@ -6,11 +6,11 @@
 	<string>sk.eyJ1IjoiemxveXNlcmd1bnlhIiwiYSI6ImNrdHY4NzJ1cTA3ajgyc3BqaTc2ZTdsYjgifQ.YoK0hZicLhW8INBnr8RH0g</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>MontserratSemiBold.ttf</string>
 		<string>MontserratRegular.ttf</string>
 		<string>MontserratMedium.ttf</string>
-		<string>MontserratBold.ttf</string>
-		<string>MontserratSemiBold.ttf</string>
 		<string>MontserratLight.ttf</string>
+		<string>MontserratBold.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

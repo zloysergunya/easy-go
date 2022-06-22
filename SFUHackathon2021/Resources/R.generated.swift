@@ -378,7 +378,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `crossroads`.
     static let crossroads = Rswift.ImageResource(bundle: R.hostingBundle, name: "crossroads")
@@ -386,6 +386,12 @@ struct R: Rswift.Validatable {
     static let launchScreenLine = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchScreenLine")
     /// Image `signIn`.
     static let signIn = Rswift.ImageResource(bundle: R.hostingBundle, name: "signIn")
+    /// Image `tabBarMap`.
+    static let tabBarMap = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarMap")
+    /// Image `tabBarNews`.
+    static let tabBarNews = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarNews")
+    /// Image `tabBarSettings`.
+    static let tabBarSettings = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarSettings")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "crossroads", bundle: ..., traitCollection: ...)`
@@ -405,6 +411,27 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "signIn", bundle: ..., traitCollection: ...)`
     static func signIn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.signIn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabBarMap", bundle: ..., traitCollection: ...)`
+    static func tabBarMap(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabBarMap, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabBarNews", bundle: ..., traitCollection: ...)`
+    static func tabBarNews(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabBarNews, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabBarSettings", bundle: ..., traitCollection: ...)`
+    static func tabBarSettings(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabBarSettings, compatibleWith: traitCollection)
     }
     #endif
 

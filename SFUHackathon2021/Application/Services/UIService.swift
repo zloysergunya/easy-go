@@ -42,7 +42,7 @@ class UIService {
     }
         
     private func openMain() {
-        setWindowRoot(viewController: MapViewController())
+        setWindowRoot(viewController: TabBarController())
     }
     
     private func addObservers() {

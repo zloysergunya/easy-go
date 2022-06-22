@@ -44,6 +44,10 @@
 		C40C657328211A040069B800 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C655C28211A040069B800 /* UIView+Shadow.swift */; };
 		C40C657428211A040069B800 /* CGRect+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C655E28211A040069B800 /* CGRect+Init.swift */; };
 		C40C657628211A9F0069B800 /* Date+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C657528211A9F0069B800 /* Date+Add.swift */; };
+		C40FA6EF2862CE2E0003481F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6EE2862CE2E0003481F /* TabBarController.swift */; };
+		C40FA6F12862CF980003481F /* UIScrollView+ScrollToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F02862CF980003481F /* UIScrollView+ScrollToTop.swift */; };
+		C40FA6F32862CFB30003481F /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F22862CFB30003481F /* String+Base64.swift */; };
+		C40FA6F52862D0050003481F /* UIViewController+ContentScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F42862D0050003481F /* UIViewController+ContentScroll.swift */; };
 		C416FE0726FAF7C80087C429 /* MontserratRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0326FAF7C80087C429 /* MontserratRegular.ttf */; };
 		C416FE0826FAF7C80087C429 /* MontserratSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0426FAF7C80087C429 /* MontserratSemiBold.ttf */; };
 		C416FE0926FAF7C80087C429 /* MontserratBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0526FAF7C80087C429 /* MontserratBold.ttf */; };
@@ -81,6 +85,7 @@
 		C470267D26FB8C2F00BF5225 /* AddressSearchSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470267C26FB8C2F00BF5225 /* AddressSearchSectionController.swift */; };
 		C470268026FB8CF900BF5225 /* AddressSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470267F26FB8CF900BF5225 /* AddressSearchCell.swift */; };
 		C470268226FB9FE500BF5225 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470268126FB9FE500BF5225 /* Paths.swift */; };
+		C48120C32836AB8E00B65462 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48120C22836AB8E00B65462 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +127,10 @@
 		C40C655C28211A040069B800 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		C40C655E28211A040069B800 /* CGRect+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Init.swift"; sourceTree = "<group>"; };
 		C40C657528211A9F0069B800 /* Date+Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Add.swift"; sourceTree = "<group>"; };
+		C40FA6EE2862CE2E0003481F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C40FA6F02862CF980003481F /* UIScrollView+ScrollToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ScrollToTop.swift"; sourceTree = "<group>"; };
+		C40FA6F22862CFB30003481F /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
+		C40FA6F42862D0050003481F /* UIViewController+ContentScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ContentScroll.swift"; sourceTree = "<group>"; };
 		C416FE0326FAF7C80087C429 /* MontserratRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratRegular.ttf; sourceTree = "<group>"; };
 		C416FE0426FAF7C80087C429 /* MontserratSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratSemiBold.ttf; sourceTree = "<group>"; };
 		C416FE0526FAF7C80087C429 /* MontserratBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratBold.ttf; sourceTree = "<group>"; };
@@ -161,6 +170,7 @@
 		C470267C26FB8C2F00BF5225 /* AddressSearchSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchSectionController.swift; sourceTree = "<group>"; };
 		C470267F26FB8CF900BF5225 /* AddressSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchCell.swift; sourceTree = "<group>"; };
 		C470268126FB9FE500BF5225 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		C48120C22836AB8E00B65462 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DFB4000B77132166886E1DD7 /* Pods-SFUHackathon2021.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFUHackathon2021.debug.xcconfig"; path = "Target Support Files/Pods-SFUHackathon2021/Pods-SFUHackathon2021.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,6 +278,7 @@
 				C40C654D28211A040069B800 /* Date+EndOfDay.swift */,
 				C40C654E28211A040069B800 /* Date+DatesBeetwenTwoDates.swift */,
 				C40C657528211A9F0069B800 /* Date+Add.swift */,
+				C40FA6F22862CFB30003481F /* String+Base64.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -288,6 +299,8 @@
 				C40C655A28211A040069B800 /* UIButton+BackgroundColoroForState.swift */,
 				C40C655B28211A040069B800 /* UIDevice+Model.swift */,
 				C40C655C28211A040069B800 /* UIView+Shadow.swift */,
+				C40FA6F02862CF980003481F /* UIScrollView+ScrollToTop.swift */,
+				C40FA6F42862D0050003481F /* UIViewController+ContentScroll.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -300,7 +313,15 @@
 			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
-		C416FE0226FAF7A30087C429 /* Font */ = {
+		C40FA6ED2862CDFE0003481F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C40FA6EE2862CE2E0003481F /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C416FE0226FAF7A30087C429 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				C416FE0E26FAFD360087C429 /* MontserratLight.ttf */,
@@ -309,7 +330,7 @@
 				C416FE0326FAF7C80087C429 /* MontserratRegular.ttf */,
 				C416FE0426FAF7C80087C429 /* MontserratSemiBold.ttf */,
 			);
-			path = Font;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C416FE1026FB00EB0087C429 /* SignIn */ = {
@@ -500,7 +521,8 @@
 				C46A8EB326FAD27800BCEECA /* Info.plist */,
 				C416FE0C26FAFB570087C429 /* R.generated.swift */,
 				C46A8EAE26FAD27800BCEECA /* Assets.xcassets */,
-				C416FE0226FAF7A30087C429 /* Font */,
+				C416FE0226FAF7A30087C429 /* Fonts */,
+				C48120C22836AB8E00B65462 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -517,6 +539,7 @@
 		C46A8EBC26FAF40F00BCEECA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C40FA6ED2862CDFE0003481F /* TabBar */,
 				C470266D26FB6CD700BF5225 /* AddressSearch */,
 				C416FE6326FB44300087C429 /* MapPointInfo */,
 				C416FE4A26FB1DEF0087C429 /* Map */,
@@ -604,7 +627,8 @@
 			buildConfigurationList = C46A8EB626FAD27800BCEECA /* Build configuration list for PBXNativeTarget "SFUHackathon2021" */;
 			buildPhases = (
 				7435E3B7EF8D7D8E6C7B8D34 /* [CP] Check Pods Manifest.lock */,
-				C416FE0B26FAF9030087C429 /* ShellScript */,
+				C40FA6F62862D0450003481F /* Update Info.plist Fonts */,
+				C416FE0B26FAF9030087C429 /* R.swift codegen */,
 				C46A8E9E26FAD27700BCEECA /* Sources */,
 				C46A8E9F26FAD27700BCEECA /* Frameworks */,
 				C46A8EA026FAD27700BCEECA /* Resources */,
@@ -691,7 +715,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C416FE0B26FAF9030087C429 /* ShellScript */ = {
+		C40FA6F62862D0450003481F /* Update Info.plist Fonts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update Info.plist Fonts";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n/usr/libexec/PlistBuddy -c \"Delete :UIAppFonts\" \"${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Add :UIAppFonts array\" \"${INFOPLIST_FILE}\"\nfor fn in `ls -1 ${PROJECT_NAME}/Resources/Fonts`; do\n    /usr/libexec/PlistBuddy -c \"Add :UIAppFonts:0 string \\\"${fn}\\\"\" \"${INFOPLIST_FILE}\"\ndone\n";
+		};
+		C416FE0B26FAF9030087C429 /* R.swift codegen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -701,6 +743,7 @@
 			inputPaths = (
 				"$TEMP_DIR/rswift-lastrun",
 			);
+			name = "R.swift codegen";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -726,6 +769,7 @@
 				C40C656B28211A040069B800 /* UIImage+InitFromColor.swift in Sources */,
 				C40C6538282113AB0069B800 /* RootView.swift in Sources */,
 				C40C65312821135E0069B800 /* SwipeNavigationController.swift in Sources */,
+				C48120C32836AB8E00B65462 /* Constants.swift in Sources */,
 				C40C656728211A040069B800 /* UIImage+Compress.swift in Sources */,
 				C470266F26FB6D0100BF5225 /* AddressSearchViewController.swift in Sources */,
 				C40C655F28211A040069B800 /* String+PhonePattern.swift in Sources */,
@@ -736,6 +780,7 @@
 				C416FE6A26FB4B4E0087C429 /* Element.swift in Sources */,
 				C40C656A28211A040069B800 /* UIColor+Hex.swift in Sources */,
 				C416FE5726FB32A90087C429 /* MapProdiver.swift in Sources */,
+				C40FA6F52862D0050003481F /* UIViewController+ContentScroll.swift in Sources */,
 				C40C652B282112D30069B800 /* UIService.swift in Sources */,
 				C416FE3726FB080E0087C429 /* Utils.swift in Sources */,
 				C40C656628211A040069B800 /* Date+DatesBeetwenTwoDates.swift in Sources */,
@@ -756,12 +801,14 @@
 				C416FE4C26FB1E010087C429 /* MapViewController.swift in Sources */,
 				C40C656128211A040069B800 /* Bundle+Version.swift in Sources */,
 				C40C656C28211A040069B800 /* UIViewController+Alerts.swift in Sources */,
+				C40FA6F12862CF980003481F /* UIScrollView+ScrollToTop.swift in Sources */,
 				C470267B26FB8AFB00BF5225 /* AddressSearchSectionModel.swift in Sources */,
 				C40C657028211A040069B800 /* UITextField+FixCaretPosition.swift in Sources */,
 				C40C657428211A040069B800 /* CGRect+Init.swift in Sources */,
 				C416FE6526FB44420087C429 /* MapPointInfoViewController.swift in Sources */,
 				C416FE4526FB16610087C429 /* CodableHelper.swift in Sources */,
 				C40C6535282113870069B800 /* ViewController.swift in Sources */,
+				C40FA6F32862CFB30003481F /* String+Base64.swift in Sources */,
 				C40C656E28211A040069B800 /* UIViewController+HideKeyboard.swift in Sources */,
 				C40C657328211A040069B800 /* UIView+Shadow.swift in Sources */,
 				C416FE6E26FB4D360087C429 /* MapPoint.swift in Sources */,
@@ -773,6 +820,7 @@
 				C416FE1226FB010B0087C429 /* SignInViewController.swift in Sources */,
 				C470267226FB6D1700BF5225 /* AddressSearchView.swift in Sources */,
 				C40C6526282111C30069B800 /* LoggerService.swift in Sources */,
+				C40FA6EF2862CE2E0003481F /* TabBarController.swift in Sources */,
 				C470267D26FB8C2F00BF5225 /* AddressSearchSectionController.swift in Sources */,
 				C40C657228211A040069B800 /* UIDevice+Model.swift in Sources */,
 				C40C65442821198E0069B800 /* ViewProviding.swift in Sources */,
