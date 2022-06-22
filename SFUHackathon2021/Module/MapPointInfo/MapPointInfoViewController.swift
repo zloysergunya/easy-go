@@ -21,6 +21,7 @@ class MapPointInfoViewController: ViewController<MapPointInfoView> {
         super.viewDidLoad()
 
         mainView.closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        mainView.undesirablePointButton.addTarget(self, action: #selector(addToUndesirablePoints), for: .touchUpInside)
         
         configure()
     }
@@ -45,6 +46,23 @@ class MapPointInfoViewController: ViewController<MapPointInfoView> {
         let p = Style().paragraphStyle(paragraphStyle)
         
         mainView.elementsLabel.attributedText = text.styleAll(p).attributedString
+        updateUndesirablePointButton()
+    }
+    
+    private func updateUndesirablePointButton() {
+        let buttonTitle = UserSettings.undesirablePoints.contains(feature) ? "Убрать точку из нежелательных" : "Пометить точку, как нежелательную"
+        mainView.undesirablePointButton.setTitle(buttonTitle, for: .normal)
+    }
+    
+    @objc private func addToUndesirablePoints() {
+        Utils.impactFeedback()
+        
+        if let index = UserSettings.undesirablePoints.firstIndex(of: feature) {
+            UserSettings.undesirablePoints.remove(at: index)
+        } else {
+            UserSettings.undesirablePoints.append(feature)
+        }
+        updateUndesirablePointButton()
     }
 
     @objc private func close() {

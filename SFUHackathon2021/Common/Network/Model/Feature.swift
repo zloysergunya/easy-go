@@ -1,16 +1,16 @@
 import Foundation
 
-struct Feature: Codable {
+struct Feature: Codable, Equatable {
     let type: String
     let properties: Properties
     let geometry: Geometry
 }
 
-struct Properties: Codable {
+struct Properties: Codable, Equatable {
     let characteristics: [Int]
 }
 
-struct Geometry: Codable {
+struct Geometry: Codable, Equatable {
     let type: String
     let coordinates: [Double]
 }

@@ -26,6 +26,19 @@ import Foundation
             defaults.set(newValue, forKey: Keys.restrictionName.rawValue)
         }
     }
+    
+    static var undesirablePoints: [Feature] {
+        get {
+            if let undesirablePoints = try? defaults.get(objectType: [Feature].self, forKey: #function) {
+                return undesirablePoints
+            }
+            
+            return []
+        }
+        set {
+            try? defaults.set(object: newValue, forKey: #function)
+        }
+    }
 
     @objc static func clear() {
         let domain = Bundle.main.bundleIdentifier!
