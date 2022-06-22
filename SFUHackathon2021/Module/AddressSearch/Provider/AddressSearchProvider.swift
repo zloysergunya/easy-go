@@ -8,6 +8,7 @@ class AddressSearchProvider {
                                     "type": "json",
                                     "locale": "ru",
                                     "debug:": true,
+                                    "point": "56.009338,92.852661",
                                     "key": Constants.graphhopperAPIKey]
         
         HTTPManager(URLString, method: "GET", params: params) { data, status in
