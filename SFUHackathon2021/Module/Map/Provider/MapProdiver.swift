@@ -33,11 +33,8 @@ class MapProdiver {
     }
     
     func getRoute(pointFrom: [Double], pointTo: [Double], completion: @escaping(Result<[Points], Error>) -> Void) {
-        let path = "/get_route"
-        let URLString = API.basePath + path
-        let params: [String:Any] = ["point_from": "\(pointFrom[0]),\(pointFrom[1])",
-                                    "point_to": "\(pointTo[0]),\(pointTo[1])",
-                                    "user_config": UserSettings.specific as Any]
+        let URLString = "https://graphhopper.com/api/1/route?point=\("\(pointFrom[0]),\(pointFrom[1])")&point=\("\(pointTo[0]),\(pointTo[1])")&profile=foot&locale=ru&debug=\(true)&points_encoded=\(false)&key=\(Constants.graphhopperAPIKey)"
+        let params: [String:Any] = [:]
         
         HTTPManager(URLString, params: params) { data, status in
             if let data = data, let decodableObj = CodableHelper.decode(APIPaths.self, from: data).decodableObj {

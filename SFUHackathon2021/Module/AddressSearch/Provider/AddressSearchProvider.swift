@@ -8,7 +8,7 @@ class AddressSearchProvider {
                                     "type": "json",
                                     "locale": "ru",
                                     "debug:": true,
-                                    "key": "db3bb9d5-c1f5-4264-9993-9d1a7908fc5f"]
+                                    "key": Constants.graphhopperAPIKey]
         
         HTTPManager(URLString, method: "GET", params: params) { data, status in
             if let data = data, let decodableObj = CodableHelper.decode(APIHits.self, from: data).decodableObj {

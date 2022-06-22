@@ -148,7 +148,7 @@ class MapViewController: ViewController<MapView> {
             return
         }
         
-        provider.getRoute(pointFrom: [pointFrom.lng, pointFrom.lat], pointTo: [pointTo.lng, pointTo.lat]) { [weak self] result in
+        provider.getRoute(pointFrom: [pointFrom.lat, pointFrom.lng], pointTo: [pointTo.lat, pointTo.lng]) { [weak self] result in
             switch result {
             case .success(let points):
                 self?.createRoure(points: points)
