@@ -14,7 +14,11 @@ class TabBarController: UITabBarController {
         let mapViewController = MapViewController()
         mapViewController.tabBarItem.image = R.image.tabBarMap()
         
-        viewControllers = [SwipeNavigationController(rootViewController: mapViewController)]
+        let settingsViewController = SettingsViewController()
+        settingsViewController.tabBarItem.image = R.image.tabBarSettings()
+        
+        viewControllers = [SwipeNavigationController(rootViewController: mapViewController),
+                           SwipeNavigationController(rootViewController: settingsViewController)]
         
         viewControllers?.compactMap({ $0 as? UINavigationController }).compactMap({ $0.viewControllers.first }).forEach({
             let inset: CGFloat = Utils.safeArea().bottom == 0 ? 4.0 : 10.0
@@ -22,6 +26,7 @@ class TabBarController: UITabBarController {
             $0.loadViewIfNeeded()
         })
         
+        selectedIndex = 1
         tabBar.backgroundColor = .white
         tabBar.tintColor = R.color.blue()
         tabBar.unselectedItemTintColor = R.color.lightBlue()

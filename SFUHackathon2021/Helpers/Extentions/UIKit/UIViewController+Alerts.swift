@@ -14,8 +14,9 @@ extension UIViewController {
                 accessText: String? = nil,
                 cancelText: String? = "Закрыть",
                 onAgree: ((UIAlertAction) -> Void)? = nil,
-                onCancel: ((UIAlertAction) -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                onCancel: ((UIAlertAction) -> Void)? = nil,
+                preferredStyle: UIAlertController.Style = .alert) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         
         if let accessText = accessText {
             alert.addAction(UIAlertAction(title: accessText, style: .default, handler: onAgree))

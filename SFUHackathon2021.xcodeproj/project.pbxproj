@@ -50,6 +50,12 @@
 		C40FA6F52862D0050003481F /* UIViewController+ContentScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F42862D0050003481F /* UIViewController+ContentScroll.swift */; };
 		C40FA6F92862DF1A0003481F /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F82862DF1A0003481F /* WeatherView.swift */; };
 		C40FA6FD2862E1290003481F /* APIWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6FC2862E1290003481F /* APIWeather.swift */; };
+		C40FA7012862E5290003481F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6FF2862E5290003481F /* SettingsViewController.swift */; };
+		C40FA7022862E5290003481F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA7002862E5290003481F /* SettingsView.swift */; };
+		C40FA7062862E56C0003481F /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA7052862E56C0003481F /* SettingsContentView.swift */; };
+		C40FA7092862E6940003481F /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA7082862E6940003481F /* NavBar.swift */; };
+		C40FA70B2862F0B20003481F /* SettingsSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA70A2862F0B20003481F /* SettingsSectionTitleView.swift */; };
+		C40FA70D2862F8A20003481F /* SettingsActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA70C2862F8A20003481F /* SettingsActionView.swift */; };
 		C416FE0726FAF7C80087C429 /* MontserratRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0326FAF7C80087C429 /* MontserratRegular.ttf */; };
 		C416FE0826FAF7C80087C429 /* MontserratSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0426FAF7C80087C429 /* MontserratSemiBold.ttf */; };
 		C416FE0926FAF7C80087C429 /* MontserratBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0526FAF7C80087C429 /* MontserratBold.ttf */; };
@@ -135,6 +141,12 @@
 		C40FA6F42862D0050003481F /* UIViewController+ContentScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ContentScroll.swift"; sourceTree = "<group>"; };
 		C40FA6F82862DF1A0003481F /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		C40FA6FC2862E1290003481F /* APIWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeather.swift; sourceTree = "<group>"; };
+		C40FA6FF2862E5290003481F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C40FA7002862E5290003481F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C40FA7052862E56C0003481F /* SettingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContentView.swift; sourceTree = "<group>"; };
+		C40FA7082862E6940003481F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		C40FA70A2862F0B20003481F /* SettingsSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionTitleView.swift; sourceTree = "<group>"; };
+		C40FA70C2862F8A20003481F /* SettingsActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActionView.swift; sourceTree = "<group>"; };
 		C416FE0326FAF7C80087C429 /* MontserratRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratRegular.ttf; sourceTree = "<group>"; };
 		C416FE0426FAF7C80087C429 /* MontserratSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratSemiBold.ttf; sourceTree = "<group>"; };
 		C416FE0526FAF7C80087C429 /* MontserratBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratBold.ttf; sourceTree = "<group>"; };
@@ -353,6 +365,42 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		C40FA6FE2862E51E0003481F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C40FA7032862E5330003481F /* View */,
+				C40FA6FF2862E5290003481F /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C40FA7032862E5330003481F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C40FA7042862E5410003481F /* Subview */,
+				C40FA7002862E5290003481F /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C40FA7042862E5410003481F /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				C40FA7052862E56C0003481F /* SettingsContentView.swift */,
+				C40FA70A2862F0B20003481F /* SettingsSectionTitleView.swift */,
+				C40FA70C2862F8A20003481F /* SettingsActionView.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
+		C40FA7072862E68A0003481F /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				C40FA7082862E6940003481F /* NavBar.swift */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
 		C416FE0226FAF7A30087C429 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +454,7 @@
 		C416FE3826FB08C70087C429 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C40FA7072862E68A0003481F /* NavBar */,
 				C416FE3926FB08EA0087C429 /* StyledTextField.swift */,
 			);
 			path = Views;
@@ -569,6 +618,7 @@
 		C46A8EBC26FAF40F00BCEECA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C40FA6FE2862E51E0003481F /* Settings */,
 				C40FA6ED2862CDFE0003481F /* TabBar */,
 				C470266D26FB6CD700BF5225 /* AddressSearch */,
 				C416FE6326FB44300087C429 /* MapPointInfo */,
@@ -805,8 +855,10 @@
 				C40C655F28211A040069B800 /* String+PhonePattern.swift in Sources */,
 				C40C656D28211A040069B800 /* UIImage+BgColorFromText.swift in Sources */,
 				C416FE1526FB011B0087C429 /* SignInView.swift in Sources */,
+				C40FA7022862E5290003481F /* SettingsView.swift in Sources */,
 				C40FA6F92862DF1A0003481F /* WeatherView.swift in Sources */,
 				C46A8EA626FAD27700BCEECA /* AppDelegate.swift in Sources */,
+				C40FA7092862E6940003481F /* NavBar.swift in Sources */,
 				C40C6524282111870069B800 /* Autowired.swift in Sources */,
 				C416FE6A26FB4B4E0087C429 /* Element.swift in Sources */,
 				C40C656A28211A040069B800 /* UIColor+Hex.swift in Sources */,
@@ -815,10 +867,12 @@
 				C40C652B282112D30069B800 /* UIService.swift in Sources */,
 				C416FE3726FB080E0087C429 /* Utils.swift in Sources */,
 				C40C656628211A040069B800 /* Date+DatesBeetwenTwoDates.swift in Sources */,
+				C40FA7012862E5290003481F /* SettingsViewController.swift in Sources */,
 				C416FE5926FB33040087C429 /* ModelError.swift in Sources */,
 				C416FE3F26FB149C0087C429 /* SignInProvider.swift in Sources */,
 				C40C6522282111790069B800 /* ServiceLocator.swift in Sources */,
 				C40C656328211A040069B800 /* Bundle+Current.swift in Sources */,
+				C40FA70D2862F8A20003481F /* SettingsActionView.swift in Sources */,
 				C40C65432821198E0069B800 /* ConstraintKeyboardObserver.swift in Sources */,
 				C470268226FB9FE500BF5225 /* Paths.swift in Sources */,
 				C416FE5B26FB331A0087C429 /* APIError.swift in Sources */,
@@ -829,6 +883,7 @@
 				C416FE6826FB445C0087C429 /* MapPointInfoView.swift in Sources */,
 				C416FE5F26FB349E0087C429 /* Feature.swift in Sources */,
 				C40C656028211A040069B800 /* String+Initials.swift in Sources */,
+				C40FA70B2862F0B20003481F /* SettingsSectionTitleView.swift in Sources */,
 				C40C656228211A040069B800 /* UserDefaults+SaveStruct.swift in Sources */,
 				C416FE4C26FB1E010087C429 /* MapViewController.swift in Sources */,
 				C40C656128211A040069B800 /* Bundle+Version.swift in Sources */,
@@ -855,6 +910,7 @@
 				C40FA6EF2862CE2E0003481F /* TabBarController.swift in Sources */,
 				C470267D26FB8C2F00BF5225 /* AddressSearchSectionController.swift in Sources */,
 				C40C657228211A040069B800 /* UIDevice+Model.swift in Sources */,
+				C40FA7062862E56C0003481F /* SettingsContentView.swift in Sources */,
 				C40C65442821198E0069B800 /* ViewProviding.swift in Sources */,
 				C416FE6126FB41FE0087C429 /* Animations.swift in Sources */,
 				C416FE0D26FAFB570087C429 /* R.generated.swift in Sources */,
