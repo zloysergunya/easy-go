@@ -22,11 +22,8 @@ class MapView: RootView {
         return view
     }()
     
-    let mapKitView: MKMapView = {
-        let mapView = MKMapView()
-        
-        return mapView
-    }()
+    let mapKitView = MKMapView()
+    let weatherView = WeatherView()
     
     let setCurrentLocationButton: UIButton = {
         let button = UIButton()
@@ -87,6 +84,7 @@ class MapView: RootView {
         addSubview(topRoundView)
         addSubview(bottomRoundView)
         addSubview(centerMapButton)
+        addSubview(weatherView)
         
         topRoundView.addSubview(topTitleLabel)
         
@@ -102,6 +100,11 @@ class MapView: RootView {
     override func setupConstraints() {
         topRoundView.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
+        }
+        
+        weatherView.snp.makeConstraints { make in
+            make.top.equalTo(topRoundView.snp.bottom).offset(16.0)
+            make.right.equalToSuperview().offset(-16.0)
         }
         
         topTitleLabel.snp.makeConstraints { make in

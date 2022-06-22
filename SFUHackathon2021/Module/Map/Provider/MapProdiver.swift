@@ -47,4 +47,25 @@ class MapProdiver {
         }
     }
     
+    func getCurrentWeather(lat: Double, lng: Double, completion: @escaping(Result<APIWeather, Error>) -> Void) {
+        let URLString = "https://api.openweathermap.org/data/2.5/weather"
+        let params: [String: Any] = [
+            "lat": lat,
+            "lon": lng,
+            "appid": Constants.openWeatherMapAPIKey,
+            "lang": "ru",
+            "units": "metric"
+        ]
+        
+        HTTPManager(URLString, params: params) { data, status in
+            if let data = data, let decodableObj = CodableHelper.decode(APIWeather.self, from: data).decodableObj {
+                completion(.success(decodableObj))
+            } else if let data = data, let decodableObj = CodableHelper.decode(APIError.self, from: data).decodableObj {
+                completion(.failure(ModelError(error: decodableObj, status: status)))
+            } else {
+                completion(.failure(NSError()))
+            }
+        }
+    }
+    
 }

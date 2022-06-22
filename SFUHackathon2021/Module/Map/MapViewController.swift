@@ -34,6 +34,7 @@ class MapViewController: ViewController<MapView> {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+        updateCurrentWeather()
     }
     
     private func loadPoints() {
@@ -57,6 +58,27 @@ class MapViewController: ViewController<MapView> {
             switch result {
             case .success(let mapElements): self?.mapElements = mapElements
             case .failure: break
+            }
+        }
+    }
+    
+    private func updateCurrentWeather() {
+        guard let location = locationManager.location?.coordinate else {
+            return
+        }
+        
+        provider.getCurrentWeather(lat: location.latitude, lng: location.longitude) { [weak self] result in
+            switch result {
+            case .success(let weather):
+                if let weather = weather.weather.first {
+                    self?.mainView.weatherView.descriptionLabel.text = weather.weatherDescription
+                    self?.mainView.weatherView.descriptionLabel.isHidden = false
+                } else {
+                    self?.mainView.weatherView.descriptionLabel.isHidden = true
+                }
+                self?.mainView.weatherView.temperatureLabel.text = "\(weather.main.temp)°C"
+                
+            case .failure(let error): break
             }
         }
     }

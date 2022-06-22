@@ -48,6 +48,8 @@
 		C40FA6F12862CF980003481F /* UIScrollView+ScrollToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F02862CF980003481F /* UIScrollView+ScrollToTop.swift */; };
 		C40FA6F32862CFB30003481F /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F22862CFB30003481F /* String+Base64.swift */; };
 		C40FA6F52862D0050003481F /* UIViewController+ContentScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F42862D0050003481F /* UIViewController+ContentScroll.swift */; };
+		C40FA6F92862DF1A0003481F /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6F82862DF1A0003481F /* WeatherView.swift */; };
+		C40FA6FD2862E1290003481F /* APIWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40FA6FC2862E1290003481F /* APIWeather.swift */; };
 		C416FE0726FAF7C80087C429 /* MontserratRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0326FAF7C80087C429 /* MontserratRegular.ttf */; };
 		C416FE0826FAF7C80087C429 /* MontserratSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0426FAF7C80087C429 /* MontserratSemiBold.ttf */; };
 		C416FE0926FAF7C80087C429 /* MontserratBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C416FE0526FAF7C80087C429 /* MontserratBold.ttf */; };
@@ -131,6 +133,8 @@
 		C40FA6F02862CF980003481F /* UIScrollView+ScrollToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ScrollToTop.swift"; sourceTree = "<group>"; };
 		C40FA6F22862CFB30003481F /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		C40FA6F42862D0050003481F /* UIViewController+ContentScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ContentScroll.swift"; sourceTree = "<group>"; };
+		C40FA6F82862DF1A0003481F /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		C40FA6FC2862E1290003481F /* APIWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeather.swift; sourceTree = "<group>"; };
 		C416FE0326FAF7C80087C429 /* MontserratRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratRegular.ttf; sourceTree = "<group>"; };
 		C416FE0426FAF7C80087C429 /* MontserratSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratSemiBold.ttf; sourceTree = "<group>"; };
 		C416FE0526FAF7C80087C429 /* MontserratBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratBold.ttf; sourceTree = "<group>"; };
@@ -321,6 +325,34 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		C40FA6F72862DF070003481F /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				C40FA6F82862DF1A0003481F /* WeatherView.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
+		C40FA6FA2862E1090003481F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C416FE5C26FB348A0087C429 /* APIFeatures.swift */,
+				C416FE5E26FB349E0087C429 /* Feature.swift */,
+				C416FE6926FB4B4E0087C429 /* Element.swift */,
+				C470267626FB894A00BF5225 /* APIHits.swift */,
+				C470268126FB9FE500BF5225 /* Paths.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C40FA6FB2862E1180003481F /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				C40FA6FC2862E1290003481F /* APIWeather.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		C416FE0226FAF7A30087C429 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,14 +432,11 @@
 		C416FE4326FB16240087C429 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C40FA6FB2862E1180003481F /* Weather */,
+				C40FA6FA2862E1090003481F /* Map */,
 				C416FE4626FB16770087C429 /* Specific.swift */,
 				C416FE5826FB33040087C429 /* ModelError.swift */,
 				C416FE5A26FB331A0087C429 /* APIError.swift */,
-				C416FE5C26FB348A0087C429 /* APIFeatures.swift */,
-				C416FE5E26FB349E0087C429 /* Feature.swift */,
-				C416FE6926FB4B4E0087C429 /* Element.swift */,
-				C470267626FB894A00BF5225 /* APIHits.swift */,
-				C470268126FB9FE500BF5225 /* Paths.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +455,7 @@
 		C416FE4D26FB1E080087C429 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C40FA6F72862DF070003481F /* Subview */,
 				C416FE4E26FB1E170087C429 /* MapView.swift */,
 			);
 			path = View;
@@ -775,6 +805,7 @@
 				C40C655F28211A040069B800 /* String+PhonePattern.swift in Sources */,
 				C40C656D28211A040069B800 /* UIImage+BgColorFromText.swift in Sources */,
 				C416FE1526FB011B0087C429 /* SignInView.swift in Sources */,
+				C40FA6F92862DF1A0003481F /* WeatherView.swift in Sources */,
 				C46A8EA626FAD27700BCEECA /* AppDelegate.swift in Sources */,
 				C40C6524282111870069B800 /* Autowired.swift in Sources */,
 				C416FE6A26FB4B4E0087C429 /* Element.swift in Sources */,
@@ -793,6 +824,7 @@
 				C416FE5B26FB331A0087C429 /* APIError.swift in Sources */,
 				C416FE4F26FB1E170087C429 /* MapView.swift in Sources */,
 				C40C6528282111DD0069B800 /* AuthService.swift in Sources */,
+				C40FA6FD2862E1290003481F /* APIWeather.swift in Sources */,
 				C416FE4926FB19A60087C429 /* UserSettings.swift in Sources */,
 				C416FE6826FB445C0087C429 /* MapPointInfoView.swift in Sources */,
 				C416FE5F26FB349E0087C429 /* Feature.swift in Sources */,
