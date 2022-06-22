@@ -76,7 +76,7 @@ class MapViewController: ViewController<MapView> {
                 } else {
                     self?.mainView.weatherView.descriptionLabel.isHidden = true
                 }
-                self?.mainView.weatherView.temperatureLabel.text = "\(weather.main.temp)°C"
+                self?.mainView.weatherView.temperatureLabel.text = "\(Int(weather.main.temp))°C"
                 
             case .failure(let error): break
             }
