@@ -32,6 +32,14 @@ enum Utils {
         return UIApplication.shared.delegate
     }
     
+    static func rootViewController() -> UIViewController? {
+        return appDelegate()?.window??.rootViewController
+    }
+    
+    static func tabBarController() -> UITabBarController? {
+        return (rootViewController() as? UINavigationController)?.viewControllers.first as? UITabBarController
+    }
+    
     static func safeArea() -> UIEdgeInsets {
         if let safeArea = appDelegate()?.window??.safeAreaInsets {
             return safeArea

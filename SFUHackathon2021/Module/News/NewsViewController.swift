@@ -44,7 +44,8 @@ extension NewsViewController: ListAdapterDataSource {
 extension NewsViewController: NewsSectionControllerDelegate {
     
     func newsSectionController(didSelect news: News) {
-        
+        let viewController = NewsInfoViewController(news: news)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

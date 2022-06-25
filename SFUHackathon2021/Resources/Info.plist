@@ -4,6 +4,8 @@
 <dict>
 	<key>MBXAccessToken</key>
 	<string>sk.eyJ1IjoiemxveXNlcmd1bnlhIiwiYSI6ImNrdHY4NzJ1cTA3ajgyc3BqaTc2ZTdsYjgifQ.YoK0hZicLhW8INBnr8RH0g</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>easy-go использует ваш календарь для добавления событий</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MontserratSemiBold.ttf</string>

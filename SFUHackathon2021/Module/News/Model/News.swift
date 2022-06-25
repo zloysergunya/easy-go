@@ -28,7 +28,7 @@ extension News {
                       date: Date().add(.hour, value: -2),
                       mapImage: "https://sun9-31.userapi.com/impf/OX91C7N70LyknVWyv8A53rK7ZHOs8pO-SxlEZA/nFx_q2x0qUQ.jpg?size=343x160&quality=96&sign=e23b6abc999045cfcd9c3c38b4740598&type=album",
                       point: .init(lat: 56.006616, lng: 92.872571),
-                      howToGetHere: nil),
+                      howToGetHere: "Коммунальный мост около Театра оперы и балета. Спуск по пандусу на нижнюю линию набережной. Под коммунальным мостом."),
                 .init(id: 2,
                       image: "https://i.redomm.ru/POc7JA2580j8.jpg",
                       title: "Выставка живописи красноярских художников «Безмятежность»",

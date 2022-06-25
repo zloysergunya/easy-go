@@ -4,6 +4,8 @@ import OverlayContainer
 
 class MapViewController: ViewController<MapView> {
     
+    static let createRouteNotification = Notification.Name(rawValue: "MapViewController.createRoute")
+    
     private let provider = MapProdiver()
     private let locationManager = CLLocationManager()
     private let regionInMeters: Double = 500.0
@@ -26,6 +28,7 @@ class MapViewController: ViewController<MapView> {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
+        bindEvents()
         loadPoints()
         loadElements()
     }
@@ -35,6 +38,13 @@ class MapViewController: ViewController<MapView> {
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         updateCurrentWeather()
+    }
+    
+    private func bindEvents() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(createRoute),
+                                               name: MapViewController.createRouteNotification,
+                                               object: nil)
     }
     
     private func loadPoints() {
@@ -147,17 +157,7 @@ class MapViewController: ViewController<MapView> {
         mainView.mapKitView.addAnnotation(mapPoint)
     }
     
-    @objc private func centerViewOnUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            mainView.mapKitView.setRegion(region, animated: true)
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
-        }
-    }
-    
-    @objc private func getRoute(_ sender: UIButton) {
-        Animations.press(view: sender)
-        
+    private func loadRoute() {
         guard let pointFrom = pointFrom else {
             Animations.shake(view: mainView.fromField)
             UINotificationFeedbackGenerator().notificationOccurred(.error)
@@ -179,6 +179,30 @@ class MapViewController: ViewController<MapView> {
                 break
             }
         }
+    }
+    
+    @objc private func createRoute(_ notification: Foundation.Notification) {
+        guard let point = notification.object as? Point,
+              let location = locationManager.location?.coordinate else {
+            return
+        }
+        
+        pointFrom = Point(lat: location.latitude, lng: location.longitude)
+        pointTo = point
+        loadRoute()
+    }
+    
+    @objc private func centerViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mainView.mapKitView.setRegion(region, animated: true)
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        }
+    }
+    
+    @objc private func getRoute(_ sender: UIButton) {
+        Animations.press(view: sender)
+        loadRoute()
     }
     
     @objc private func setUserLocationToField(_ sender: UIButton) {
