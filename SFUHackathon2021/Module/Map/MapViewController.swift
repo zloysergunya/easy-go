@@ -31,6 +31,13 @@ class MapViewController: ViewController<MapView> {
         bindEvents()
         loadPoints()
         loadElements()
+        
+        if !UserSettings.isOnboardingShown {
+            UserSettings.isOnboardingShown = true
+            let viewController = OnboardingViewController()
+            viewController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

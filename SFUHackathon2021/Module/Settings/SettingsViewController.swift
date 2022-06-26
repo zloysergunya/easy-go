@@ -9,6 +9,7 @@ class SettingsViewController: ViewController<SettingsView> {
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        mainView.contentView.appInstructionActionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openOnboarding)))
         mainView.contentView.exitButton.addTarget(self, action: #selector(exit), for: .touchUpInside)
     }
     
@@ -16,6 +17,12 @@ class SettingsViewController: ViewController<SettingsView> {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    @objc private func openOnboarding() {
+        let viewController = OnboardingViewController()
+        viewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func exit() {

@@ -378,7 +378,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `back36`.
     static let back36 = Rswift.ImageResource(bundle: R.hostingBundle, name: "back36")
@@ -388,6 +388,12 @@ struct R: Rswift.Validatable {
     static let crossroads = Rswift.ImageResource(bundle: R.hostingBundle, name: "crossroads")
     /// Image `launchScreenLine`.
     static let launchScreenLine = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchScreenLine")
+    /// Image `onboardingPage1`.
+    static let onboardingPage1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingPage1")
+    /// Image `onboardingPage2`.
+    static let onboardingPage2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingPage2")
+    /// Image `onboardingPage3`.
+    static let onboardingPage3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboardingPage3")
     /// Image `signIn`.
     static let signIn = Rswift.ImageResource(bundle: R.hostingBundle, name: "signIn")
     /// Image `tabBarMap`.
@@ -422,6 +428,27 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "launchScreenLine", bundle: ..., traitCollection: ...)`
     static func launchScreenLine(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.launchScreenLine, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "onboardingPage1", bundle: ..., traitCollection: ...)`
+    static func onboardingPage1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.onboardingPage1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "onboardingPage2", bundle: ..., traitCollection: ...)`
+    static func onboardingPage2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.onboardingPage2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "onboardingPage3", bundle: ..., traitCollection: ...)`
+    static func onboardingPage3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.onboardingPage3, compatibleWith: traitCollection)
     }
     #endif
 

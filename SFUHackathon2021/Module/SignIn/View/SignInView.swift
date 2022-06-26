@@ -47,7 +47,7 @@ class SignInView: RootView {
         let button = UIButton()
         button.setTitle("Продолжить", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = R.font.montserratMedium(size: 14.0)
+        button.titleLabel?.font = R.font.montserratSemiBold(size: 13.0)
         button.backgroundColor = R.color.blue()
         button.layer.cornerRadius = 24.0
         

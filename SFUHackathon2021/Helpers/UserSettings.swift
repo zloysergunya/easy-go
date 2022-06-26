@@ -39,6 +39,15 @@ import Foundation
             try? defaults.set(object: newValue, forKey: #function)
         }
     }
+    
+    static var isOnboardingShown: Bool {
+        get {
+            return defaults.bool(forKey: #function)
+        }
+        set {
+            defaults.set(newValue, forKey: #function)
+        }
+    }
 
     @objc static func clear() {
         let domain = Bundle.main.bundleIdentifier!

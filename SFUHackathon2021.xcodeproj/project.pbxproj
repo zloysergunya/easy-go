@@ -89,6 +89,12 @@
 		C416FE6826FB445C0087C429 /* MapPointInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C416FE6726FB445C0087C429 /* MapPointInfoView.swift */; };
 		C416FE6A26FB4B4E0087C429 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = C416FE6926FB4B4E0087C429 /* Element.swift */; };
 		C416FE6E26FB4D360087C429 /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C416FE6D26FB4D360087C429 /* MapPoint.swift */; };
+		C460C87E2868369B004E651A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460C87C2868369B004E651A /* OnboardingViewController.swift */; };
+		C460C87F2868369B004E651A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460C87D2868369B004E651A /* OnboardingView.swift */; };
+		C460C88328683A0E004E651A /* OnboardingSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460C88228683A0E004E651A /* OnboardingSectionModel.swift */; };
+		C460C88528683A3E004E651A /* OnboardingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460C88428683A3E004E651A /* OnboardingConfig.swift */; };
+		C460C88828683B00004E651A /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460C88728683B00004E651A /* OnboardingCell.swift */; };
+		C460C88B28683BCF004E651A /* OnboardingSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460C88A28683BCF004E651A /* OnboardingSectionController.swift */; };
 		C46A8EA626FAD27700BCEECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A8EA526FAD27700BCEECA /* AppDelegate.swift */; };
 		C46A8EAF26FAD27800BCEECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46A8EAE26FAD27800BCEECA /* Assets.xcassets */; };
 		C470266F26FB6D0100BF5225 /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470266E26FB6D0100BF5225 /* AddressSearchViewController.swift */; };
@@ -192,6 +198,12 @@
 		C416FE6726FB445C0087C429 /* MapPointInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPointInfoView.swift; sourceTree = "<group>"; };
 		C416FE6926FB4B4E0087C429 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		C416FE6D26FB4D360087C429 /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
+		C460C87C2868369B004E651A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		C460C87D2868369B004E651A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C460C88228683A0E004E651A /* OnboardingSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSectionModel.swift; sourceTree = "<group>"; };
+		C460C88428683A3E004E651A /* OnboardingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConfig.swift; sourceTree = "<group>"; };
+		C460C88728683B00004E651A /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		C460C88A28683BCF004E651A /* OnboardingSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSectionController.swift; sourceTree = "<group>"; };
 		C46A8EA226FAD27700BCEECA /* SFUHackathon2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFUHackathon2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46A8EA526FAD27700BCEECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C46A8EAE26FAD27800BCEECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -625,6 +637,51 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C460C87B2868368B004E651A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C460C88928683BC7004E651A /* Section */,
+				C460C88128683A02004E651A /* Model */,
+				C460C8802868369F004E651A /* View */,
+				C460C87C2868369B004E651A /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C460C8802868369F004E651A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C460C88628683AF9004E651A /* Cell */,
+				C460C87D2868369B004E651A /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C460C88128683A02004E651A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C460C88228683A0E004E651A /* OnboardingSectionModel.swift */,
+				C460C88428683A3E004E651A /* OnboardingConfig.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C460C88628683AF9004E651A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C460C88728683B00004E651A /* OnboardingCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C460C88928683BC7004E651A /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				C460C88A28683BCF004E651A /* OnboardingSectionController.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
 		C46A8E9926FAD27700BCEECA = {
 			isa = PBXGroup;
 			children = (
@@ -689,6 +746,7 @@
 		C46A8EBC26FAF40F00BCEECA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C460C87B2868368B004E651A /* Onboarding */,
 				C4763B702866C630001B1F27 /* NewsInfo */,
 				C40FA70E286356F10003481F /* News */,
 				C40FA6FE2862E51E0003481F /* Settings */,
@@ -967,6 +1025,7 @@
 				C40C652B282112D30069B800 /* UIService.swift in Sources */,
 				C416FE3726FB080E0087C429 /* Utils.swift in Sources */,
 				C40C656628211A040069B800 /* Date+DatesBeetwenTwoDates.swift in Sources */,
+				C460C87E2868369B004E651A /* OnboardingViewController.swift in Sources */,
 				C40FA7012862E5290003481F /* SettingsViewController.swift in Sources */,
 				C487DC4928635D2900D9428B /* ImageLoader.swift in Sources */,
 				C416FE5926FB33040087C429 /* ModelError.swift in Sources */,
@@ -976,6 +1035,7 @@
 				C40FA70D2862F8A20003481F /* SettingsActionView.swift in Sources */,
 				C40C65432821198E0069B800 /* ConstraintKeyboardObserver.swift in Sources */,
 				C4763B742866C64E001B1F27 /* NewsInfoContentView.swift in Sources */,
+				C460C88528683A3E004E651A /* OnboardingConfig.swift in Sources */,
 				C470268226FB9FE500BF5225 /* Paths.swift in Sources */,
 				C416FE5B26FB331A0087C429 /* APIError.swift in Sources */,
 				C416FE4F26FB1E170087C429 /* MapView.swift in Sources */,
@@ -989,7 +1049,9 @@
 				C40FA70B2862F0B20003481F /* SettingsSectionTitleView.swift in Sources */,
 				C40C656228211A040069B800 /* UserDefaults+SaveStruct.swift in Sources */,
 				C416FE4C26FB1E010087C429 /* MapViewController.swift in Sources */,
+				C460C88328683A0E004E651A /* OnboardingSectionModel.swift in Sources */,
 				C40C656128211A040069B800 /* Bundle+Version.swift in Sources */,
+				C460C87F2868369B004E651A /* OnboardingView.swift in Sources */,
 				C40C656C28211A040069B800 /* UIViewController+Alerts.swift in Sources */,
 				C40FA6F12862CF980003481F /* UIScrollView+ScrollToTop.swift in Sources */,
 				C470267B26FB8AFB00BF5225 /* AddressSearchSectionModel.swift in Sources */,
@@ -1014,6 +1076,7 @@
 				C40FA718286358F10003481F /* News.swift in Sources */,
 				C416FE1226FB010B0087C429 /* SignInViewController.swift in Sources */,
 				C470267226FB6D1700BF5225 /* AddressSearchView.swift in Sources */,
+				C460C88828683B00004E651A /* OnboardingCell.swift in Sources */,
 				C40C6526282111C30069B800 /* LoggerService.swift in Sources */,
 				C40FA6EF2862CE2E0003481F /* TabBarController.swift in Sources */,
 				C470267D26FB8C2F00BF5225 /* AddressSearchSectionController.swift in Sources */,
@@ -1023,6 +1086,7 @@
 				C40C65442821198E0069B800 /* ViewProviding.swift in Sources */,
 				C416FE6126FB41FE0087C429 /* Animations.swift in Sources */,
 				C416FE0D26FAFB570087C429 /* R.generated.swift in Sources */,
+				C460C88B28683BCF004E651A /* OnboardingSectionController.swift in Sources */,
 				C40FA712286356FD0003481F /* NewsView.swift in Sources */,
 				C470267726FB894A00BF5225 /* APIHits.swift in Sources */,
 				C416FE5D26FB348A0087C429 /* APIFeatures.swift in Sources */,

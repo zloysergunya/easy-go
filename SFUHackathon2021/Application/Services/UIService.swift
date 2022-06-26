@@ -16,7 +16,7 @@ class UIService {
     
     func openModule() {
         let authService: AuthService? = ServiceLocator.getService()
-        
+
         if authService?.authStatus == .unauthorized {
             openAuth()
         } else {
